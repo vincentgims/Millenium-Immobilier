@@ -1,0 +1,22 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@100;200;300;600;800&display=swap');
+@import "tailwindcss";
+
+
+
+body {
+  overflow-x: hidden;
+  font-family:'Comfortaa', sans-serif;
+}
+
+.ant-drawer {
+  z-index: 1;
+  margin-top: 80px !important;
+  overflow: hidden !important;
+}
+
+.ant-drawer-body{
+  margin: 0 30px;
+  overflow: hidden !important;
+  height: 100% !important;
+}

@@ -1,0 +1,115 @@
+{
+  "en": {
+    "search": {
+      "title": "Search"
+    },
+    "compte": {
+      "title": "User Account"
+    },
+    "nav": {
+      "home": "Home"
+    },
+    "accueil": {
+        "title": "Home"
+      },
+    "vente": {
+        "title": "Sale"
+      },
+      "location": {
+        "title": "Renting"
+      },
+       "estimation": {
+        "title": "Valuation"
+      },
+       "conseil": {
+        "title": "Advice"
+      },
+       "ges_locative": {
+        "title": "Property management"
+      },
+      "accompagne": {
+        "title": "Assistance"
+      },
+      "agence": {
+        "title": "Agence"
+      },
+      "equipe": {
+        "title": "Team"
+      },
+      "temoignage": {
+        "title": "Testimonial"
+      },
+    "footer": {
+      "rights": "All rights reserved",
+      "version": "Version"
+    },
+    "contact": {
+      "title": "Contact us",
+      "address": "Rue, Jardin de la Mer, Toliara",
+      "email": "baiboly-masina@gmail.com",
+      "phone": "+261 34 35 781 61",
+      "form": {
+        "name": "Name",
+        "email": "Email",
+        "subject": "Subject",
+        "message": "Message",
+        "send": "Send Message"
+      }
+    }
+  },
+  "fr": {
+    "compte": {
+      "title": "Compte Utilisateur"
+    },
+    "search": {
+      "title": "Rechercher"
+    },
+    "accueil": {
+        "title": "Accueil"
+      },
+    "vente": {
+        "title": "Vente"
+      },
+      "location": {
+        "title": "Location"
+      },
+       "estimation": {
+        "title": "Estimation"
+      },
+      "ges_locative": {
+        "title": "Gestion locative"
+      },
+      "conseil": {
+        "title": "Conseil"
+      },
+      "accompagne": {
+        "title": "Accompagement"
+      },
+      "agence": {
+        "title": "Agence"
+      },
+      "equipe": {
+        "title": "Equipe"
+      },
+      "temoignage": {
+        "title": "Temoignage"
+      },
+    "footer": {
+      "rights": "Tous droits réservés",
+      "version": "Version"
+    },
+    "contact": {
+      "title": "Contactez-nous",
+      "address": "Rue, Jardin de la Mer, Toliara",
+      "email": "baiboly-masina@gmail.com",
+      "phone": "+261 34 35 781 61",
+      "form": {
+        "name": "Nom",
+        "email": "Email",
+        "subject": "Objet",
+        "message": "Message",
+        "send": "Envoyer le message"
+      }
+    }
+  }
+}
