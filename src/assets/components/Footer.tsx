@@ -13,7 +13,7 @@ export default function Footer() {
           md:flex-row md:items-center md:justify-between md:text-left py-[15px]"
         >
           <h1 className="font-semibold text-[15px] mt-4 md:mt-0">
-            Copyright © {anneeActuelle} - Vimmo Immobilière
+            Copyright © 2024 - {anneeActuelle} - Vimmo Immobilière
           </h1>
 
           <div className="inline-flex">
