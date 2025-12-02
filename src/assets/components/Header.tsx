@@ -10,8 +10,7 @@ import { Link, useLocation } from "react-router-dom";
 import { items } from "@components/NavItems";
 import { motion, AnimatePresence } from "framer-motion";
 import { AiFillCaretDown } from "react-icons/ai";
-import { LuEyeClosed } from "react-icons/lu";
-import { MenuOutlined } from "@ant-design/icons";
+import { LuEyeClosed,LuMenu} from "react-icons/lu";
 import { Drawer, Button, Collapse } from "antd";
 
 interface MenuItem {
@@ -156,7 +155,7 @@ const [openDropdown, setOpenDropdown] = useState<string | null>(null);
                     className="w-8 h-8"
                   />
                 ) : (
-                  <MenuOutlined
+                  <LuMenu
                     style={{ fontSize: 22, color: drawerButtonColor }}
                     className="w-8 h-8"
                   />
