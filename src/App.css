@@ -20,3 +20,7 @@ body {
   overflow: hidden !important;
   height: 100% !important;
 }
+
+.ant-card-body{
+  padding: 0 !important;
+}

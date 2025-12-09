@@ -314,7 +314,7 @@ const [openDropdown, setOpenDropdown] = useState<string | null>(null);
                       animate={{ rotate: isActive ? 180 : 0 }}
                       transition={{ duration: 0.3, ease: "easeInOut" }}
                     >
-                      <AiFillCaretDown className="w-4 h-4 text-black" />
+                      <AiFillCaretDown className="w-3 h-3 text-black" />
                     </motion.div>
                   )}
                   items={[

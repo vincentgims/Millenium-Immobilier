@@ -10,7 +10,6 @@ export default function Vente() {
   return (
     <>
       <div className="relative w-full h-[15vh] md:h-[50vh]"></div>
-
     </>
   );
 }

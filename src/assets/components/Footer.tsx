@@ -20,7 +20,7 @@ export default function Footer() {
             <Link to="#" className="mr-[5px]" title="Facebook">
               <BiLogoFacebook className="w-8 h-8 text-[24px] rounded-3xl border border-[#ffffff] p-[3px] hover:text-white hover:bg-[#1877F2] hover:border-[#1877F2]" />
             </Link>
-            <Link to="#" className="mr-[5px]" title="Instagram">
+            <Link to="#" className="mr-[5px]" title="Twitter">
               <BsTwitterX className="w-8 h-8 text-[24px] rounded-3xl border border-[#ffffff] p-[3px] hover:text-neutral-950 hover:bg-white hover:border-white" />
             </Link>
             <Link to="#" className="mr-[5px]" title="Linkedin">

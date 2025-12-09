@@ -51,3 +51,235 @@ export const items: NavItem[] = [
   },
 ];
 
+import photo1 from "@images/imagesCard/6908c2255ea89-photo-moyenne.webp";
+import photo2 from "@images/imagesCard/6908c2256b8ed-photo-hd.webp";
+
+export const infos_immo = [
+  {
+    id: 1,
+    type: "A louer, Appartement",
+
+    specific: {
+      chambre: 6,
+      bain: 4,
+      terrasse: 2,
+      parking: 5,
+      garage: 2,
+      description: "Appartement de 3645m² a louer à Barcelone",
+      surface_terrain: 3645,
+      surface_sejour: 50,
+      etat_interieur: "A rafraichir",
+      etat_exterieur: "Bon",
+      vue: "Panoramique",
+      chauffage: "fuel",
+      eau_chaude: "Electrique",
+    },
+
+    prestation: {
+      piscine: 2,
+      climatisation: 2,
+      chemine: 1,
+      vitre: "double vitrage",
+      buanderie: 1,
+    },
+
+    images: [
+      { src: photo1 },
+      { src: photo2 }
+    ],
+
+    infos_pratique: {
+      prix: "50 000 €",
+    },
+  },
+  {
+    id: 2,
+    type: "Vente",
+
+    specific: {
+      chambre: 3,
+      bain: 3,
+      terrasse: 2,
+      parking: 5,
+      garage: 2,
+      description: "description",
+      surface_terrain: 3645,
+      surface_sejour: 50,
+      etat_interieur: "A rafraichir",
+      etat_exterieur: "Bon",
+      vue: "Panoramique",
+      chauffage: "fuel",
+      eau_chaude: "Electrique",
+    },
+
+    prestation: {
+      piscine: 2,
+      climatisation: 2,
+      chemine: 1,
+      vitre: "double vitrage",
+      buanderie: 1,
+    },
+
+    images: [
+      { src: photo1 },
+      { src: photo2 }
+    ],
+
+    infos_pratique: {
+      prix: "50 000 €",
+    },
+  },
+  {
+    id: 3,
+    type: "Vente",
+
+    specific: {
+      chambre: 2,
+      bain: 2,
+      terrasse: 2,
+      parking: 5,
+      garage: 2,
+      description: "description",
+      surface_terrain: 3645,
+      surface_sejour: 50,
+      etat_interieur: "A rafraichir",
+      etat_exterieur: "Bon",
+      vue: "Panoramique",
+      chauffage: "fuel",
+      eau_chaude: "Electrique",
+    },
+
+    prestation: {
+      piscine: 2,
+      climatisation: 2,
+      chemine: 1,
+      vitre: "double vitrage",
+      buanderie: 1,
+    },
+
+    images: [
+      { src: photo1 },
+      { src: photo2 }
+    ],
+
+    infos_pratique: {
+      prix: "50 000 €",
+    },
+  },
+  {
+    id: 4,
+    type: "Vente",
+
+    specific: {
+      chambre: 5,
+      bain: 4,
+      terrasse: 2,
+      parking: 5,
+      garage: 2,
+      description: "description",
+      surface_terrain: 3645,
+      surface_sejour: 50,
+      etat_interieur: "A rafraichir",
+      etat_exterieur: "Bon",
+      vue: "Panoramique",
+      chauffage: "fuel",
+      eau_chaude: "Electrique",
+    },
+
+    prestation: {
+      piscine: 2,
+      climatisation: 2,
+      chemine: 1,
+      vitre: "double vitrage",
+      buanderie: 1,
+    },
+
+    images: [
+      { src: photo1 },
+      { src: photo2 }
+    ],
+
+    infos_pratique: {
+      prix: "50 000 €",
+    },
+  },
+  {
+    id: 5,
+    type: "Vente",
+
+    specific: {
+      chambre: 4,
+      bain: 5,
+      terrasse: 2,
+      parking: 5,
+      garage: 2,
+      description: "description",
+      surface_terrain: 3645,
+      surface_sejour: 50,
+      etat_interieur: "A rafraichir",
+      etat_exterieur: "Bon",
+      vue: "Panoramique",
+      chauffage: "fuel",
+      eau_chaude: "Electrique",
+    },
+
+    prestation: {
+      piscine: 2,
+      climatisation: 2,
+      chemine: 1,
+      vitre: "double vitrage",
+      buanderie: 1,
+    },
+
+    images: [
+      { src: photo1 },
+      { src: photo2 }
+    ],
+
+    infos_pratique: {
+      prix: "50 000 €",
+    },
+  },
+  {
+    id: 6,
+    type: "Vente",
+
+    specific: {
+      chambre: 6,
+      bain: 2,
+      terrasse: 2,
+      parking: 5,
+      garage: 2,
+      description: "description",
+      surface_terrain: 3645,
+      surface_sejour: 50,
+      etat_interieur: "A rafraichir",
+      etat_exterieur: "Bon",
+      vue: "Panoramique",
+      chauffage: "fuel",
+      eau_chaude: "Electrique",
+    },
+
+    prestation: {
+      piscine: 2,
+      climatisation: 2,
+      chemine: 1,
+      vitre: "double vitrage",
+      buanderie: 1,
+    },
+
+    images: [
+      { src: photo1 },
+      { src: photo2 }
+    ],
+
+    infos_pratique: {
+      prix: "50 000 €",
+    },
+  },
+];
+
+
+
+
+

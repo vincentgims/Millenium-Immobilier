@@ -36,6 +36,9 @@ const { t } = useTranslation();
       <div className="relative w-full h-[15vh] md:h-[50vh]"></div>
       <div className="w-full overflow-hidden bg-[#374151]">
         <div className="container px-4 md:px-8 mx-auto">
+          <div className="">
+      
+          </div>
           <div className="flex flex-col md:flex-row gap-6 mt-6">
             {/* Bloc Infos */}
             <div className="md:w-2/4 w-full sticky top-0 self-start">
