@@ -83,7 +83,7 @@ const [openDropdown, setOpenDropdown] = useState<string | null>(null);
     <div className={`absolute w-full top-0 left-0 z-1000 ${TextColor}`}>
       {/* Header top */}
       <div className="h-[65px] flex items-center pt-4">
-        <nav className="relative container h-[60px] flex px-8 mx-auto items-center justify-between">
+        <nav className="relative container h-[60px] flex px-8 m-auto items-center justify-between">
           <a
             href="tel:+26134357816"
             target="_blank"

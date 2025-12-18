@@ -10,7 +10,10 @@
       "home": "Home"
     },
     "accueil": {
-        "title": "Home"
+        "title": "Home",
+        "form": {
+        "btnSearch": "Search property"
+      }
       },
     "vente": {
         "title": "Sale"
@@ -65,7 +68,10 @@
       "title": "Rechercher"
     },
     "accueil": {
-        "title": "Accueil"
+        "title": "Accueil",
+        "form": {
+        "btnSearch": "Rechercher un bien"
+      }
       },
     "vente": {
         "title": "Vente"

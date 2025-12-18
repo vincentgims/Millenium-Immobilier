@@ -1,5 +1,4 @@
 
-import { BiEnvelope, BiSolidPhone, BiSolidMap } from "react-icons/bi";
 import { Input, Button } from "antd";
 import { useEffect } from "react";
 import { useTranslation } from "react-i18next";
@@ -11,26 +10,7 @@ const { t } = useTranslation();
     document.title = `Premium immobilière | ${t("contact.title")}`;
   }, [t]);
 
-  const contactInfos = [
-    {
-      icon: (
-        <BiSolidMap className="w-8 h-8 mr-6 text-[#1289A7] hover:text-[#f0932b]" />
-      ),
-      text: t("contact.address"),
-    },
-    {
-      icon: (
-        <BiEnvelope className="w-8 h-8 mr-6 text-[#1289A7] hover:text-[#f0932b]" />
-      ),
-      text: "contact.millenium@gmail.com",
-    },
-    {
-      icon: (
-        <BiSolidPhone className="w-8 h-8 mr-6 text-[#1289A7] hover:text-[#f0932b] -rotate-90" />
-      ),
-      text: t("contact.phone"),
-    },
-  ];
+ 
   return (
     <>
       <div className="relative w-full h-[15vh] md:h-[50vh]"></div>
@@ -39,21 +19,8 @@ const { t } = useTranslation();
           <div className="">
       
           </div>
-          <div className="flex flex-col md:flex-row gap-6 mt-6">
-            {/* Bloc Infos */}
-            <div className="md:w-2/4 w-full sticky top-0 self-start">
-              {contactInfos.map((info, index) => (
-                <div
-                  key={index}
-                  className="flex p-[15px] items-center cursor-pointer"
-                >
-                  {info.icon}
-                  <span className="font-semibold text-[#ffffff] hover:text-[#f0932b]">
-                    {info.text}
-                  </span>
-                </div>
-              ))}
-            </div>
+          <div className="flex flex-col md:flex-row gap-6 mt-4 mb-8">
+          
 
             {/* Bloc Formulaire */}
             <div className="md:w-2/4 w-full space-y-6">

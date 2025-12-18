@@ -27,13 +27,8 @@ export const items: NavItem[] = [
   },
   {id:4,
     key: "4",
-    label: {fr:"Nos Services", en:"Our Services"},
-    children: [
-      {id:5, key: "4-1", label: {fr: "Estimation gratuite", en: "Free Property Valuation"}, path: "/estimation" },
-      {id:6, key: "4-2", label: {fr: "Gestion locative", en: "Property Management"}, path: "/gestion_locative" },
-      {id:7, key: "4-3", label: {fr: "Accompagnement", en: "Assistance"}, path: "/accompagne" },
-      {id:8, key: "4-4", label: {fr: "Conseils immobiliers", en: "Real Estate Advice"}, path: "/conseil" },
-    ],
+    label: {fr:"Estimation", en:"Valuation"},
+    path: "/estimation"
   },
   {id:9,
     key: "5",
@@ -41,7 +36,7 @@ export const items: NavItem[] = [
     children: [
       {id:10, key: "5-1", label: {fr: "L'agence", en: "The Agency"} , path: "/agence" },
       {id:11, key: "5-2", label: {fr: "Notre équipe", en: "Our Team"}, path: "/equipe" },
-      {id:12, key: "5-3", label: {fr: "Témoignages clients", en: "Client Testimonials"}, path: "/temoignage" },
+      {id:12, key: "5-3", label: {fr: "Nos Services", en: "Our Services"}, path: "/service" },
     ],
   },
   {id:13,
@@ -51,8 +46,31 @@ export const items: NavItem[] = [
   },
 ];
 
+
+import img_slide1 from "@images/slide1.jpg";
+import img_slide2 from "@images/slide2.jpg";
+import img_slide3 from "@images/slide3.jpg";
+
+export interface HeroSlide {
+  image: string;
+  title: string;
+}
+
+export const slideHero: HeroSlide[] = [
+  { image: img_slide1, title: "Bien d’exception" },
+  { image: img_slide2, title: "Villas modernes" },
+  { image: img_slide3, title: "Appartements premium" },
+];
+
+
+export interface SlideBien{
+  image: string;
+  title: string;
+}
+
 import photo1 from "@images/imagesCard/6908c2255ea89-photo-moyenne.webp";
 import photo2 from "@images/imagesCard/6908c2256b8ed-photo-hd.webp";
+import photo3 from "@images/imagesCard/6908c22579cdc-photo-hd.webp"
 
 export const infos_immo = [
   {
@@ -85,7 +103,8 @@ export const infos_immo = [
 
     images: [
       { src: photo1 },
-      { src: photo2 }
+      { src: photo2 },
+      {src:photo3}
     ],
 
     infos_pratique: {
@@ -122,7 +141,9 @@ export const infos_immo = [
 
     images: [
       { src: photo1 },
-      { src: photo2 }
+      { src: photo2 },
+      {src:photo3}
+
     ],
 
     infos_pratique: {
@@ -159,7 +180,9 @@ export const infos_immo = [
 
     images: [
       { src: photo1 },
-      { src: photo2 }
+      { src: photo2 },
+      {src:photo3}
+
     ],
 
     infos_pratique: {
@@ -196,7 +219,9 @@ export const infos_immo = [
 
     images: [
       { src: photo1 },
-      { src: photo2 }
+      { src: photo2 },
+      {src:photo3}
+
     ],
 
     infos_pratique: {
@@ -233,7 +258,9 @@ export const infos_immo = [
 
     images: [
       { src: photo1 },
-      { src: photo2 }
+      { src: photo2 },
+      {src:photo3}
+
     ],
 
     infos_pratique: {
@@ -270,7 +297,9 @@ export const infos_immo = [
 
     images: [
       { src: photo1 },
-      { src: photo2 }
+      { src: photo2 },
+      {src:photo3}
+
     ],
 
     infos_pratique: {
@@ -280,6 +309,35 @@ export const infos_immo = [
 ];
 
 
-
+export const Services = [
+  {
+    id: 1,
+    name: "Blog & Informations",
+    description:
+      "Découvrez nos conseils, actus et analyses sur l’immobilier à Aix en Provence et ses environs. Tout ce qu’il faut savoir avant d’acheter, vendre ou louer !",
+    image: photo1,
+  },
+  {
+    id: 2,
+    name: "Estimation",
+    description:
+      "Obtenez une estimation précise et confidentielle de votre bien à Aix en Provence dans le Luberon ou à Cassis. Nos experts connaissent parfaitement le marché local.",
+    image: photo2,
+  },
+  {
+    id: 3,
+    name: "Accompagements",
+    description:
+      "Créez votre alerte personnalisée et recevez les nouvelles annonces à Aix-en-Provence, Venelles, Le Puy Ste Reparade et autres villes aux alentours dès leur parution.",
+    image: photo3,
+  },
+  {
+    id: 4,
+    name: "Gestion locative",
+    description:
+      "Créez votre alerte personnalisée et recevez les nouvelles annonces à Aix-en-Provence, Venelles, Le Puy Ste Reparade et autres villes aux alentours dès leur parution.",
+    image: photo2,
+  },
+];
 
 

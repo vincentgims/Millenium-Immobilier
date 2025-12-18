@@ -1,12 +1,51 @@
 import { Link } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 import {BiLogoFacebook, BiLogoLinkedin, BiLogoWhatsapp} from "react-icons/bi";
 import { BsTwitterX } from "react-icons/bs";
+import { BiEnvelope, BiSolidPhone, BiSolidMap } from "react-icons/bi";
+import LogoFooter from "@images/logo_agence_footer.png"
 export default function Footer() {
+  const { t } = useTranslation();
   const anneeActuelle = new Date().getFullYear();
+  const contactInfos = [
+    {
+      icon: (
+        <BiSolidMap className="w-8 h-8 mr-4" />
+      ),
+      text: t("contact.address"),
+    },
+    {
+      icon: (
+        <BiEnvelope className="w-8 h-8 mr-4" />
+      ),
+      text: "contact.millenium@gmail.com",
+    },
+    {
+      icon: (
+        <BiSolidPhone className="w-8 h-8 mr-4 -rotate-90" />
+      ),
+      text: t("contact.phone"),
+    },
+  ];
 
   return (
-    <div className="bg-[#374151]">
-      <div className="container m-auto px-8 py-6 text-[#ffffff]  ">
+    <div className="bg-transparent">
+      <div className="container m-auto px-8 py-4 text-gray-600">
+        {/* Bloc Infos */}
+        <div className="md:w-2/4 w-full sticky top-0 self-start py-4 md:px-4">
+          <img src={LogoFooter} alt="Logo footer de l'agence" className="w-55 object-cover pb-4" />
+          {contactInfos.map((info, index) => ( 
+            <div 
+              key={index}
+              className="flex py-2 items-center cursor-pointer"
+            >
+              {info.icon}
+              <span className="font-semibold">
+                {info.text}
+              </span>
+            </div>
+          ))}
+        </div>
         <div className="border-t border-[#959299]" />
         <div
           className="flex flex-col-reverse items-center justify-center text-center 
@@ -18,16 +57,16 @@ export default function Footer() {
 
           <div className="inline-flex">
             <Link to="#" className="mr-[5px]" title="Facebook">
-              <BiLogoFacebook className="w-8 h-8 text-[24px] rounded-3xl border border-[#ffffff] p-[3px] hover:text-white hover:bg-[#1877F2] hover:border-[#1877F2]" />
+              <BiLogoFacebook className="w-8 h-8 text-[24px] rounded-4xl border border-gray-600 p-[3px]" />
             </Link>
             <Link to="#" className="mr-[5px]" title="Twitter">
-              <BsTwitterX className="w-8 h-8 text-[24px] rounded-3xl border border-[#ffffff] p-[3px] hover:text-neutral-950 hover:bg-white hover:border-white" />
+              <BsTwitterX className="w-8 h-8 text-[24px] rounded-3xl border border-gray-600 p-[3px]" />
             </Link>
             <Link to="#" className="mr-[5px]" title="Linkedin">
-              <BiLogoLinkedin className="w-8 h-8 text-[24px] rounded-3xl border border-[#ffffff] p-[3px] hover:text-white hover:bg-[#0A66C2] hover:border-[#0A66C2]" />
+              <BiLogoLinkedin className="w-8 h-8 text-[24px] rounded-3xl border border-gray-600 p-[3px]" />
             </Link>
             <Link to="#" className="mr-[5px]" title="Whatsapp">
-              <BiLogoWhatsapp className="w-8 h-8 text-[24px] rounded-3xl border border-[#ffffff] p-[3px] hover:text-white hover:bg-[#25D366] hover:border-[#25D366]" />
+              <BiLogoWhatsapp className="w-8 h-8 text-[24px] rounded-3xl border border-gray-600 p-[3px]" />
             </Link>
           </div>
         </div>

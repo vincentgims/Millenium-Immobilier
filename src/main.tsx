@@ -1,13 +1,16 @@
-import { StrictMode } from 'react'
-import { createRoot } from 'react-dom/client'
+import { StrictMode } from "react";
+import { createRoot } from "react-dom/client";
+import { ConfigProvider } from "antd";
 import { BrowserRouter } from "react-router-dom";
-import App from './App.tsx'
-import './i18n';
+import App from "./App";
+import "./i18n";
 
-createRoot(document.getElementById('root')!).render(
-  <BrowserRouter>
-    <StrictMode>
+createRoot(document.getElementById("root")!).render(
+  <ConfigProvider wave={{ disabled: true }}>
+  <StrictMode>
+    <BrowserRouter>
       <App />
-    </StrictMode>
-  </BrowserRouter>
+    </BrowserRouter>
+  </StrictMode>
+  </ConfigProvider>
 );
