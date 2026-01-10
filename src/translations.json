@@ -48,12 +48,13 @@
     },
     "contact": {
       "title": "Contact us",
+      "labelEmail": "Email",
       "address": "Rue, Jardin de la Mer, Toliara",
-      "email": "baiboly-masina@gmail.com",
+      "email": "Email",
       "phone": "+261 34 35 781 61",
       "form": {
         "name": "Name",
-        "email": "Email",
+        "email": "contact.millenium@gmail.com",
         "subject": "Subject",
         "message": "Message",
         "send": "Send Message"
@@ -65,7 +66,7 @@
       "title": "Compte Utilisateur"
     },
     "search": {
-      "title": "Rechercher"
+      "title": "Chercher"
     },
     "accueil": {
         "title": "Accueil",
@@ -106,8 +107,9 @@
     },
     "contact": {
       "title": "Contactez-nous",
+      "labelEmail": "Email",
       "address": "Rue, Jardin de la Mer, Toliara",
-      "email": "baiboly-masina@gmail.com",
+      "email": "contact.millenium@gmail.com",
       "phone": "+261 34 35 781 61",
       "form": {
         "name": "Nom",

@@ -3,7 +3,7 @@ import Select from "react-select";
 import Drapeau from "@images/Flag_of_France.svg";
 import Flag from "@images/Flag_of_USA.png";
 import { useTranslation } from "react-i18next";
-import { BiSearch, BiSolidPhone, BiUser } from "react-icons/bi";
+import { BiEnvelope, BiPlus, BiSolidPhone, BiUser } from "react-icons/bi";
 import Logo from "@images/logo_agence.png";
 import Logo1 from "@images/logo_agence_bis.png";
 import { Link, useLocation } from "react-router-dom";
@@ -13,53 +13,67 @@ import { AiFillCaretDown } from "react-icons/ai";
 import { LuEyeClosed,LuMenu} from "react-icons/lu";
 import { Drawer, Button, Collapse } from "antd";
 
+
+interface MenuLabel {
+  fr: string;
+  en: string;
+}
+
 interface MenuItem {
   id: number;
   key: string;
-  label: any;
+  label: MenuLabel;
   path?: string;
   children?: MenuItem[];
 }
+
 export default function Header() {
   const { i18n, t } = useTranslation();
   const location = useLocation();
-  const activeItem = items.find(item =>
-  item.path && location.pathname.replace(/\/+$/, "").startsWith(item.path)
+  const activeItem = items.find(
+  item =>
+    item.path &&
+    location.pathname.replace(/\/+$/, "").startsWith(item.path)
 );
-const currentLogo = activeItem?.id === 1 ? Logo1 : Logo;
-const TextColor = activeItem?.id === 1 ? "text-black" : "text-white";
-const drawerButtonColor = activeItem?.id === 1 ? "#000000" : "#ffffff";
+
+const isHome = activeItem?.id === 1;
+
+const theme = {
+  logo: isHome ? Logo1 : Logo,
+  textColor: isHome ? "text-black" : "text-white",
+  bgColor: isHome ? "bg-gray-600" : "bg-gray-600",
+  drawerColor: isHome ? "#000000" : "#ffffff",
+};
+
 const [openDropdown, setOpenDropdown] = useState<string | null>(null);
   const [drawerVisible, setDrawerVisible] = useState(false);
-  const [isMobile, setIsMobile] = useState(window.innerWidth < 780);
+  const [isMobile, setIsMobile] = useState(false);
   const [activePanelKey, setActivePanelKey] = useState<string | undefined>(
     undefined
   );
-  const [lang, setLang] = useState<"fr" | "en">(() => {
-    return (localStorage.getItem("i18nextLng") as "fr" | "en") || "fr";
-  });
 
   const toggleDrawer = () => setDrawerVisible(!drawerVisible);
   const closeDrawer = () => setDrawerVisible(false);
+
   useEffect(() => {
     const handleResize = () => {
-      const isNowMobile = window.innerWidth < 780;
-      setIsMobile(isNowMobile);
-      if (!isNowMobile) {
+      const mobile  = window.innerWidth < 780;
+      setIsMobile(mobile);
+      if (!mobile) {
         setDrawerVisible(false);
       }
     };
-
+  handleResize();
     window.addEventListener("resize", handleResize);
-    handleResize();
-
     return () => window.removeEventListener("resize", handleResize);
+    
   }, []);
+
+  const lang = i18n.language as "fr" | "en";
   const changeLang = (newLang: "fr" | "en") => {
     i18n.changeLanguage(newLang);
-    setLang(newLang);
-    localStorage.setItem("i18nextLng", newLang);
   };
+
 
   const languages = [
     { code: "fr", label: "FR", flag: Drapeau },
@@ -74,31 +88,62 @@ const [openDropdown, setOpenDropdown] = useState<string | null>(null);
 
   const formatOptionLabel = ({ label, flag }: any) => (
     <div className="flex items-center gap-1">
-      <img src={flag} alt={label} className="w-5 h-4" />
+      <img src={flag} alt={label} className="w-5 h-4 " />
       {label}
     </div>
   );
+
+  const selectStyles = {
+  control: (base: any, state: any) => ({
+    ...base,
+    boxShadow: "none",
+    borderColor: state.isFocused ? "gray" : "#ccc",
+    "&:hover": { borderColor: "gray" },
+  }),
+};
+
   
   return (
-    <div className={`absolute w-full top-0 left-0 z-1000 ${TextColor}`}>
+    <div className={`absolute w-full top-0 left-0 z-50 ${theme.textColor}`}>
       {/* Header top */}
       <div className="h-[65px] flex items-center pt-4">
         <nav className="relative container h-[60px] flex px-8 m-auto items-center justify-between">
-          <a
-            href="tel:+26134357816"
-            target="_blank"
-            rel="Numéro téléphone"
-            className="md:flex hidden items-center mr-2"
-          >
-            <BiSolidPhone
-              className={`w-8 h-8 mr-1 text-[#1289A7] -rotate-90 ${TextColor}`}
-            />
-            <span className="hover:text-[#f0932b] hover:font-semibold">
-              +261 34 35 781 61
-            </span>
-          </a>
-          {/* Sélecteur de langue */}
-          <div className="flex items-center justify-between">
+          {/* left header */}
+          <div className="flex gap-2">
+            <a
+              href="tel:+26134357816"
+              target="_blank"
+              rel="Numéro téléphone"
+              className="flex items-center mr-2"
+            >
+              <BiSolidPhone
+                className={`w-8 h-8 mr-2 text-[#1289A7] -rotate-90 ${theme.textColor}`}
+              />
+              <span className="hover:text-[#f0932b] text-[14px] hover:font-semibold">
+                +261 34 35 781 61
+              </span>
+            </a>
+            <a href="" className="md:flex hidden items-center mr-2">
+              <BiEnvelope
+                className={`w-8 h-8 mr-2 text-[#1289A7] ${theme.textColor}`}
+              />
+              <span className="hover:text-[#f0932b] text-[14px] hover:font-semibold">
+                {t("contact.labelEmail")}
+              </span>
+            </a>
+          </div>
+
+          {/* right header */}
+          <div className="flex ">
+            <a
+              href=""
+              className={`mr-4 chercher flex justify-center rounded-2xl items-center ${theme.textColor}`}
+            >
+              <BiPlus className="w-8 h-8 " />
+              <span className="text-[14px] font-semibold">
+                {t("search.title")}
+              </span>
+            </a>
             <Select
               value={options.find((o) => o.value === lang)}
               options={options}
@@ -108,55 +153,30 @@ const [openDropdown, setOpenDropdown] = useState<string | null>(null);
                 }
               }}
               formatOptionLabel={formatOptionLabel}
-              className="absolute md:flex hidden w-30 text-sm"
-              styles={{
-                control: (base, state) => ({
-                  ...base,
-                  boxShadow: "none", // retire l'effet bleu
-                  borderColor: state.isFocused ? "gray" : "#ccc", // nouvelle couleur si sélectionné
-                  "&:hover": {
-                    borderColor: "gray",
-                  },
-                }),
-              }}
+              className="absolute md:flex hidden mr-2 text-[12px]"
+              styles={selectStyles}
             />
-            <a href="" className="md:flex hidden items-center mr-4">
-              <BiSearch
-                className={`w-8 h-8 mx-2 text-[#1289A7] ${TextColor}`}
-              />
-              <span className="hover:text-[#f0932b] hover:font-semibold">
-                {t("search.title")}
-              </span>
-            </a>
             <a href="" className="md:flex hidden items-center">
-              <BiUser className={`w-8 h-8 mx-2 text-[#1289A7] ${TextColor}`} />
-              <span className="hover:text-[#f0932b] hover:font-semibold">
+              <BiUser className={`w-8 h-8 mr-2 ${theme.textColor}`} />
+              <span className="hover:text-[#f0932b] text-[14px] hover:font-semibold">
                 {t("compte.title")}
               </span>
-            </a>
-            {/* Logo */}
-            <a href="/">
-              <img
-                src={currentLogo}
-                alt="Agence immobilière Vimmo"
-                className="object-cover cursor-pointer h-12 md:h-auto flex md:hidden"
-              />
             </a>
           </div>
           {/* Bouton drawer mobile */}
           <div className="md:hidden">
-            <Button
+            <Button 
               type="text"
               onClick={toggleDrawer}
               icon={
                 drawerVisible ? (
                   <LuEyeClosed
-                    style={{ fontSize: 22, color: drawerButtonColor }}
-                    className="w-8 h-8"
+                    style={{ fontSize: 22, color: theme.drawerColor }}
+                    className="w-8 h-8 justify-center"
                   />
                 ) : (
                   <LuMenu
-                    style={{ fontSize: 22, color: drawerButtonColor }}
+                    style={{ fontSize: 22, color: theme.drawerColor }}
                     className="w-8 h-8"
                   />
                 )
@@ -166,12 +186,12 @@ const [openDropdown, setOpenDropdown] = useState<string | null>(null);
         </nav>
       </div>
       {/* Logo */}
-      <div className="container px-8 mx-auto justify-center md:flex hidden">
+      <div className="container px-8 mx-auto justify-center flex">
         <a href="/">
           <img
-            src={currentLogo}
+            src={theme.logo}
             alt="Agence immobilière Vimmo"
-            className="w-full object-cover my-6 cursor-pointer"
+            className="h-auto w-[300px] sm:w-full my-6 cursor-pointer object-contain"
           />
         </a>
       </div>
@@ -199,7 +219,7 @@ const [openDropdown, setOpenDropdown] = useState<string | null>(null);
           };
 
           const submenuTextColor = (child: MenuItem) => {
-            if (activeItem?.id != 1) return "text-white hover:text-[#ff793f]";
+            if (activeItem?.id != 1) return "text-black! hover:text-[#ff793f]!";
             return isChildActive(child)
               ? "text-[#ff793f]" // actif
               : "text-black hover:text-[#ff793f]";
@@ -242,15 +262,15 @@ const [openDropdown, setOpenDropdown] = useState<string | null>(null);
                         animate={{ opacity: 1, y: 0 }}
                         exit={{ opacity: 0, y: -10 }}
                         transition={{ duration: 0.2 }}
-                        className="absolute w-max min-w-40 z-50 p-4"
+                        className="absolute w-max min-w-40 -right-4 z-50 p-4"
                       >
-                        <div className="pl-2 border-gray-200 space-y-1">
+                        <div className="pl-4 border! border-gray-400! space-y-1 bg-white rounded-xl py-3 z-1000">
                           {item.children?.map((child) => (
                             <Link
                               key={child.key}
                               to={child.path || "#"}
                               onClick={() => setOpenDropdown(null)}
-                              className={`block text-sm ${submenuTextColor(
+                              className={`block text-sm py-0.5 ${submenuTextColor(
                                 child
                               )}`}
                             >
@@ -286,8 +306,10 @@ const [openDropdown, setOpenDropdown] = useState<string | null>(null);
           placement="top"
           onClose={closeDrawer}
           open={drawerVisible}
+          mask={true}
+          maskClosable={true}
+          zIndex={1000}
           styles={{ header: { display: "none" } }}
-          // width="100%"
           height="100%"
           className="md:hidden bg-white"
         >
@@ -356,6 +378,7 @@ const [openDropdown, setOpenDropdown] = useState<string | null>(null);
           </div>
         </Drawer>
       )}
+      <div className="w-50! m-auto px-8 "></div>
     </div>
   );
 }

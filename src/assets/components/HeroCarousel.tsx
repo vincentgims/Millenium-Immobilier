@@ -15,11 +15,11 @@ export default function HeroCarousel({ slides }: HeroProps) {
   return (
     <Carousel autoplay autoplaySpeed={5000} effect="fade" dots={false}>
       {slides.map((slide, index) => (
-        <div key={index} className="relative">
+        <div key={index} className="relative w-full aspect-video max-h-[650px]">
           <img
             src={slide.image}
             alt={slide.title}
-            className="w-full h-[35vh] md:h-[90vh] object-cover object-[0_40%] z-1"
+            className="absolute inset-0 w-full h-full object-cover"
           />
           <div className="absolute inset-0 bg-black/60" />
         </div>

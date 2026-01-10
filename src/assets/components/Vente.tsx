@@ -1,5 +1,6 @@
 import { useEffect } from "react";
 import { useTranslation } from "react-i18next";
+import RechercheForm from "@components/RechercheForm";
 
 
 export default function Vente() {
@@ -9,7 +10,9 @@ export default function Vente() {
   }, [t]);
   return (
     <>
-      <div className="relative w-full h-[15vh] md:h-[50vh]"></div>
+      <div className="relative  w-full max-h-[650px] aspect-video">
+          <RechercheForm />
+      </div>
     </>
   );
 }

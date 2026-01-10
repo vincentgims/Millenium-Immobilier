@@ -11,7 +11,7 @@ body {
 
 .ant-drawer {
   z-index: 1;
-  margin-top: 80px !important;
+  margin-top: 85px !important;
   overflow: hidden !important;
 }
 
@@ -26,8 +26,34 @@ body {
 }
 
 
-@media (min-width: 770px) and (max-width: 1023px) {
+@media (min-width: 768px) and (max-width: 1024px) {
   .ant-card {
     width: 45% !important;
   }
+  
 }
+
+@media (max-width: 900px) {
+  form {
+    display: none;
+  }
+
+}
+
+@media (min-width: 900px) {
+
+  .chercher{
+    display: none;
+  }
+
+}
+
+@media (min-width: 1024px) and (max-width: 1150px) {
+  form{
+    position: relative;
+    top: 100px !important;
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+  
+}
+
